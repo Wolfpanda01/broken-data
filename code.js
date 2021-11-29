@@ -4,7 +4,7 @@ function play_craps() {
 
 
     var die2 = Math.ceil(Math.random() * 6); //pick a random number from 0-6, it rounds it to the nears whole number , result becomes die2
-    
+
 
 
     var sum = die1 + die2; //the final result is the combation of die1 and die2
@@ -26,7 +26,7 @@ function play_craps() {
     } else {
         //document.getElementById("tieRes").innerHTML = tie; //cauclates the results for a tie
         document.getElementById("finalRes").innerHTML = "Draw - you neither won nor lost. Please try again "; // write statment if tie vaules are hit
-        
+
     }
 }
 
@@ -105,109 +105,108 @@ function btrBlastOff() {
         }, i * 5000);
     }
 }
-function start(){
+function start() {
     console.log("start() function started");
     document.getElementById("data").rows["seconds"].innerHTML = "Reading Data...";
     index = 0;
     timer = setInterval(updateDisplay, time_interval);
     document.getElementById("startButton").disabled = true;
     document.getElementById("stopButton").disabled = false;
-    }
-    function stop(){
-        console.log("stop() function started");
-        clearInterval(timer);
-document.getElementById("startButton").disabled = false;
-document.getElementById("stopButton").disabled = true; 
-    }
-    function getData(){
-        var loadedData = loadData(); 
-        return loadedData;
-    }
+}
+function stop() {
+    console.log("stop() function started");
+    clearInterval(timer);
+    document.getElementById("startButton").disabled = false;
+    document.getElementById("stopButton").disabled = true;
+}
+function getData() {
+    var loadedData = loadData();
+    return loadedData;
+}
 
-    function dataRow(legend,value,units){
-        msg = "<td>";
-        msg += legend;
-        msg += ": <td><td>";
-        msg += value;
-        msg += " " + units;
-        msg += "</td>";
-        return msg;
-    }
-    function dataRow(legend,value,units){
-        msg = "<td>" + legend+ ": <td><td>" + value + " " + units + "</td>";
-       return msg;
-    }
+function dataRow(legend, value, units) {
+    msg = "<td>";
+    msg += legend;
+    msg += ": <td><td>";
+    msg += value;
+    msg += " " + units;
+    msg += "</td>";
+    return msg;
+}
+function dataRow(legend, value, units) {
+    msg = "<td>" + legend + ": <td><td>" + value + " " + units + "</td>";
+    return msg;
+}
 
-function playStation(){
+function playStation() {
     console.log("playStation started");
     mySound = new sound("us-lab-background.mp3")
     mySound.play();
 }
-function sound(scrFile){
+function sound(scrFile) {
     this.sound = document.createElement("audio");
     this.sound.src = scrFile
     this.sound.setAttribute("preload", "audio");
     this.sound.setAttribute("controls", "none");
     this.sound.style.display = "none";
     document.body.appendChild(this.sound)
-    this.play = function(){
+    this.play = function () {
         this.sound.play();
     }
-    this,stop = function(){
+    this, stop = function () {
         this.sound.pause();
     }
 }
-function playWolf(){
+function playWolf() {
     console.log("playWolf() started"); // change actal
     mySound = new sound("us-lab-background.mp3"); //change to actal one
     mySound.play();
 }
-class InputData{
-constructor(
- time_seconds,
-Latitude,
-Longitude,
-GPS_Altitude,
-BMP_Sensor_Altitude,
-BMP_Sensor_Pressure,
- BMP_Sensor_Temperature,
- Digital_Sensor_Temperature,
-CSS_Sensor_Temperature,
-CSS_Sensor_eCO2,
-CSS_Sensor_TVOC,
-UV,
-Accel_X,
- Accel_Y,
- Accel_Z,
-Magnetic_X,
-Magnetic_Y,
- Magnetic_Z,
- Gyro_X,
-Gyro_Y,
-Gyro_Z,
-        )
-    {
-this.time_seconds = time_seconds;
-this.Latitude = Latitude;
-this.Longitude = Longitude;
-this.GPS_Altitude = GPS_Altitude;
-this.BMP_Sensor_Altitude = BMP_Sensor_Altitude;
-this.BMP_Sensor_Pressure = BMP_Sensor_Pressure;
-this.BMP_Sensor_Temperature =BMP_Sensor_Temperature; 
-this.Digital_Sensor_Temperature = Digital_Sensor_Temperature;
-this.CSS_Sensor_Temperature = CSS_Sensor_Temperature;
-this.CSS_Sensor_eCO2 = CSS_Sensor_eCO2;
-this.CSS_Sensor_TVOC = CSS_Sensor_TVOC;
-this.UV = UV;
-this.Accel_X = Accel_X;
-this.Accel_Y = Accel_Y;
-this.Accel_Z = Accel_Z;
-this.Magnetic_X = Magnetic_X;
-this.Magnetic_Y = Magnetic_Y; 
-this.Magnetic_Z = Magnetic_Z;
-this.Gyro_X = Gyro_X; 
-this.Gyro_Y = Gyro_Y; 
-this.Gyro_Z = Gyro_Z; 
+class InputData {
+    constructor(
+        time_seconds,
+        Latitude,
+        Longitude,
+        GPS_Altitude,
+        BMP_Sensor_Altitude,
+        BMP_Sensor_Pressure,
+        BMP_Sensor_Temperature,
+        Digital_Sensor_Temperature,
+        CSS_Sensor_Temperature,
+        CSS_Sensor_eCO2,
+        CSS_Sensor_TVOC,
+        UV,
+        Accel_X,
+        Accel_Y,
+        Accel_Z,
+        Magnetic_X,
+        Magnetic_Y,
+        Magnetic_Z,
+        Gyro_X,
+        Gyro_Y,
+        Gyro_Z,
+    ) {
+        this.time_seconds = time_seconds;
+        this.Latitude = Latitude;
+        this.Longitude = Longitude;
+        this.GPS_Altitude = GPS_Altitude;
+        this.BMP_Sensor_Altitude = BMP_Sensor_Altitude;
+        this.BMP_Sensor_Pressure = BMP_Sensor_Pressure;
+        this.BMP_Sensor_Temperature = BMP_Sensor_Temperature;
+        this.Digital_Sensor_Temperature = Digital_Sensor_Temperature;
+        this.CSS_Sensor_Temperature = CSS_Sensor_Temperature;
+        this.CSS_Sensor_eCO2 = CSS_Sensor_eCO2;
+        this.CSS_Sensor_TVOC = CSS_Sensor_TVOC;
+        this.UV = UV;
+        this.Accel_X = Accel_X;
+        this.Accel_Y = Accel_Y;
+        this.Accel_Z = Accel_Z;
+        this.Magnetic_X = Magnetic_X;
+        this.Magnetic_Y = Magnetic_Y;
+        this.Magnetic_Z = Magnetic_Z;
+        this.Gyro_X = Gyro_X;
+        this.Gyro_Y = Gyro_Y;
+        this.Gyro_Z = Gyro_Z;
     }
 
 }
